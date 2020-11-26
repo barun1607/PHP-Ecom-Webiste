@@ -1,0 +1,68 @@
+:root {
+  --bg-color: #E8FFC1;
+  --nav-color: #0278AE;
+  --btn-color: #00587A;
+  --card-color: #A5ECD7;
+  --nav-color-hover: #6fcffc;
+}
+
+body {  
+  padding-top: 56px;
+  background-color: var(--bg-color);
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+  background-color: var(--btn-color) !important;
+}
+
+.navbar-custom {
+  background-color: var(--nav-color);
+}
+
+.card-body {
+  color: var(--nav-color);
+  background-color: var(--card-color);
+  border: none;
+}
+
+.card-header {
+  color: var(--nav-color);
+  background-color: var(--card-color);
+  border: none;
+}
+
+.card-footer {
+  background-color: var(--card-color);
+  color: var(--nav-color);
+  border: none;
+}
+
+.list-group-item.active {
+  background-color: var(--card-color);
+  color: var(--nav-color);
+  border: none;
+}
+
+.list-group-item {
+  color: white;
+  background-color: var(--btn-color);
+}
+
+.list-group-item:hover {
+  text-decoration: none;
+  color: var(--nav-color-hover);
+}
+
+.text-def {
+  color: var(--nav-color);
+}
+
+a {
+  color: var(--nav-color);
+}
+
+a:hover {
+  text-decoration: none;
+  transform: scale(1.015);
+  color: var(--nav-color-hover);
+}
