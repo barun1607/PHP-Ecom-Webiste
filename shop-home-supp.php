@@ -1,4 +1,11 @@
 <?php
+  session_start();
+
+  if(!isset($_SESSION['uid'])) {
+    header('login.php');
+    die();
+  }
+
   $servername = "localhost";
   $username = "root";
   $password = "";
@@ -40,6 +47,10 @@
       </div>
     </div>';
   }
+
+
+
+  $connection->close();
   
 ?>
 
@@ -87,7 +98,7 @@
             <a class="nav-link" href="#">Calculators</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Cart <i class='fas fa-shopping-cart'></i></a>
+            <a class="nav-link" href="cart.php">Cart <i class='fas fa-shopping-cart'></i></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Logout <i class='fas fa-sign-out-alt'></i></a>

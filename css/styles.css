@@ -66,3 +66,8 @@ a:hover {
   transform: scale(1.015);
   color: var(--nav-color-hover);
 }
+
+.modal-body, .modalheader, .modal-footer {
+  background-color: var(--card-color);
+  border: none;
+}

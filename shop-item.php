@@ -1,6 +1,13 @@
 <?php
+  session_start();
+
+  if(!isset($_SESSION['uid'])) {
+    header('login.php');
+    die();
+  }
+
   $pid = $_GET['pid'];
-  //print($pid);
+  $cid = $_SESSION['cid'];
 
   $servername = "localhost";
   $username = "root";
@@ -14,12 +21,22 @@
   }
 
   $getProduct = "SELECT * FROM products WHERE pid=$pid";
+  $updateCart = "INSERT INTO cart_contents(cid, pid) values ($cid, $pid);";
 
   $result = $connection->query($getProduct);
 
   $row = $result->fetch_assoc();
 
-  //print_r($row);
+  $message = "";
+
+  if(isset($_POST['cartadd'])) {
+    if($connection->query($updateCart) === TRUE) $message = "Item added to cart";
+    unset($_POST['cartadd']);
+  }
+
+
+
+  $connection->close();
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +49,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Item</title>
+  <title><?php echo $row['pname'];?></title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -78,7 +95,7 @@
 
   <!-- Page Content -->
   <div class="container">
-
+    <br><h3 class="text-def"><?php echo $message;?></h3>
     <div class="row justify-content-center">
 
       <div class="col-lg-9">
@@ -109,7 +126,9 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
             <small class="text-muted">Posted by Anonymous on 3/1/17</small>
             <hr>
-            <a href="#" class="btn btn-primary">Add to Cart</a>
+            <form method="POST">
+              <button type="submit" name="cartadd" value="cartadd" class="btn btn-primary">Add to Cart</button>
+            </form>
           </div>
         </div>
         <!-- /.card -->

@@ -1,5 +1,30 @@
 <?php
   session_start();
+  $uid = 1;
+  $cid = 1;
+
+  $_SESSION['uid'] = $uid;
+  $_SESSION['cid'] = $cid;
+
+  if(!isset($_SESSION['uid'])) {
+    header('Location: login.php');
+    die();    
+  }
+
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "wp_project_db";
+
+  $connection = mysqli_connect($servername, $username, $password, $dbname);
+
+  if (!$connection) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
+
+
+
+  $connection->close();
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +70,7 @@
             <a class="nav-link" href="#">Calculators</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Cart <i class='fas fa-shopping-cart'></i></a>
+            <a class="nav-link" href="cart.php">Cart <i class='fas fa-shopping-cart'></i></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Logout <i class='fas fa-sign-out-alt'></i></a>
