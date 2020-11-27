@@ -34,7 +34,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="shop-home.php">Shop</a>
+            <a class="nav-link" href="shop-home-workout.php">Shop</a>
             <span class="sr-only">(current)</span>
           </li>
           <li class="nav-item">
@@ -56,8 +56,8 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-lg-12">
-          <h1 class="display-4 text-black mt-5 mb-2" style="font-weight: 500;">Business Name or Tagline</h1>
-          <p class="mb-5 text-black-100" style="font-weight: 500;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non possimus ab labore provident mollitia. Id assumenda voluptate earum corporis facere quibusdam quisquam iste ipsa cumque unde nisi, totam quas ipsam.</p>
+          <h1 class="display-4 text-black mt-5 mb-2" style="font-weight: 500;">Be Your Best Self</h1>
+          <p class="mb-5 text-black-100" style="font-weight: 500;">Use our ptoducts to reach the peak of your physical abilities</p>
         </div>
       </div>
     </div>
@@ -70,64 +70,49 @@
       <div class="col-md-12 mb-5 text-def">
         <h2>What We Do</h2>
         <hr>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
-        <a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
+        <p>We provide the best products and services in the fitness world. We have some of the most accurate calculators that will help you track your progress. We also have a stor, which has the highest quality fitness related products.</p>
+        <p>Check out our sevices and pick what you need!</p>
+        <a class="btn btn-primary btn-lg" href="shop-home-workout.php">Check out our store &raquo;</a>
       </div>
-      <!-- <div class="col-md-4 mb-5">
-        <h2>Contact Us</h2>
-        <hr>
-        <address>
-          <strong>Start Bootstrap</strong>
-          <br>3481 Melrose Place
-          <br>Beverly Hills, CA 90210
-          <br>
-        </address>
-        <address>
-          <abbr title="Phone">P:</abbr>
-          (123) 456-7890
-          <br>
-          <abbr title="Email">E:</abbr>
-          <a href="mailto:#">name@example.com</a>
-        </address>
-      </div> -->
     </div>
     <!-- /.row -->
 
-    <div class="row">
+    <h2 class="text-def">Testimonials</h2>
+    <hr>
+    <div class="row">      
       <div class="col-md-4 mb-5">
         <div class="card h-100">
-          <img class="card-img-top" src="https://placehold.it/300x200" alt="">
+          <img class="card-img-top" src="assets/img/gigachad.jpg" alt="">
           <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
+            <h4 class="card-title">Ernest</h4>
+            <p class="card-text">Why yes, I buy all my workout programs from this website, how could you tell?</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
+            <a href="shop-home-workout.php" class="btn btn-primary">Check out our workouts</a>
           </div>
         </div>
       </div>
       <div class="col-md-4 mb-5">
         <div class="card h-100">
-          <img class="card-img-top" src="https://placehold.it/300x200" alt="">
+          <img class="card-img-top" src="assets/img/grizzly.jpg" alt="">
           <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
+            <h4 class="card-title">Kyriakos</h4>
+            <p class="card-text">These diet programs have helped me gain substantial mass for my powerlifting meets</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
+            <a href="shop-home-diet.php" class="btn btn-primary">Check out our diets</a>
           </div>
         </div>
       </div>
       <div class="col-md-4 mb-5">
         <div class="card h-100">
-          <img class="card-img-top" src="https://placehold.it/300x200" alt="">
+          <img class="card-img-top" src="assets/img/vader.jpg" alt="">
           <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+            <h4 class="card-title">Jason</h4>
+            <p class="card-text">The supplements I bought here are PED free and authentic.</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
+            <a href="shop-home-supp.php" class="btn btn-primary">Check out our supplements</a>
           </div>
         </div>
       </div>

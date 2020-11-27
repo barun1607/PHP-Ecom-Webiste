@@ -34,7 +34,7 @@
             <a class="nav-link" href="home.php">Home</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="shop-home.php">Shop              
+            <a class="nav-link" href="shop-home-workout.php">Shop              
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -95,7 +95,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
             <small class="text-muted">Posted by Anonymous on 3/1/17</small>
             <hr>
-            <a href="#" class="btn btn-success">Leave a Review</a>
+            <a href="#" class="btn btn-primary">Leave a Review</a>
           </div>
         </div>
         <!-- /.card -->

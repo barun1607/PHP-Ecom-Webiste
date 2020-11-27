@@ -1,6 +1,46 @@
 <?php
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "wp_project_db";
+
+  $connection = mysqli_connect($servername, $username, $password, $dbname);
+
+  if (!$connection) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
+
+  $fetchProducts = "SELECT * FROM products WHERE type='diet'";
+
+  $result = $connection->query($fetchProducts);
+
+  // if(mysqli_num_rows($result) > 0){
+  //   echo "success";
+  // } else {
+  //   echo "No results";
+  // }
+
   
 
+  function renderProducts($row) {
+    // print_r($row);
+    echo '<div class="col-lg-4 col-md-6 mb-4">
+      <div class="card h-100">
+        <a href="#"><img class="card-img-top" src="'.$row['path'].'" alt=""></a>
+        <div class="card-body">
+          <h4 class="card-title">
+            <a href="shop-item.php">'.$row['pname'].'</a>
+          </h4>
+          <h5>Rs. '.$row['price'].'</h5>
+          <p class="card-text">'.$row['description'].'</p>
+        </div>
+        <div class="card-footer">
+          <large style="color: #0278AE;">&#9733; &#9733; &#9733; &#9733; &#9734;</large>
+        </div>
+      </div>
+    </div>';
+  }
+  
 ?>
 
 <!DOCTYPE html>
@@ -66,9 +106,9 @@
 
         <h1 class="my-4 tex">Shop</h1>
         <div class="list-group">
-          <a href="#" class="list-group-item active">Category 1</a>
-          <a href="#" class="list-group-item">Category 2</a>
-          <a href="#" class="list-group-item">Category 3</a>
+          <a href="shop-home-workout.php" class="list-group-item">Workouts</a>
+          <a href="#" class="list-group-item active">Diets</a>
+          <a href="shop-home-supp.php" class="list-group-item">Supplements</a>
         </div>
 
       </div>
@@ -84,13 +124,13 @@
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="First slide">
+              <img class="d-block img-fluid" src="assets/img/pexels-li-sun-2294354.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Second slide">
+              <img class="d-block img-fluid" src="assets/img/gym-coronavirus.jpg" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+              <img class="d-block img-fluid" src="assets/img/pexels-li-sun-2294361.jpg" alt="Third slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -106,22 +146,8 @@
         <div class="row">
 
         <?php
-          for($i = 0;$i < 5;$i++) {
-            echo '<div class="col-lg-4 col-md-6 mb-4">
-              <div class="card h-100">
-                <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    <a href="shop-item.html">Item One</a>
-                  </h4>
-                  <h5>$24.99</h5>
-                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
-                </div>
-                <div class="card-footer">
-                  <large style="color: #0278AE;">&#9733; &#9733; &#9733; &#9733; &#9734;</large>
-                </div>
-              </div>
-            </div>';
+          while($row = $result->fetch_assoc()) {
+            renderProducts($row);
           }
         ?>
 
