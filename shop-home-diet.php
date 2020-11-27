@@ -29,7 +29,7 @@
         <a href="#"><img class="card-img-top" src="'.$row['path'].'" alt=""></a>
         <div class="card-body">
           <h4 class="card-title">
-            <a href="shop-item.php">'.$row['pname'].'</a>
+            <a href="shop-item.php?pid='.$row['pid'].'">'.$row['pname'].'</a>
           </h4>
           <h5>Rs. '.$row['price'].'</h5>
           <p class="card-text">'.$row['description'].'</p>
@@ -124,13 +124,13 @@
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img class="d-block img-fluid" src="assets/img/pexels-li-sun-2294354.jpg" alt="First slide">
+              <img class="d-block img-fluid" src="assets/img/pexels-ella-olsson-1640777.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="assets/img/gym-coronavirus.jpg" alt="Second slide">
+              <img class="d-block img-fluid" src="assets/img/pexels-lumn-1410236.jpg" alt="Second slide">
             </div>
             <div class="carousel-item">
-              <img class="d-block img-fluid" src="assets/img/pexels-li-sun-2294361.jpg" alt="Third slide">
+              <img class="d-block img-fluid" src="assets/img/pexels-christel-jensen-628776.jpg" alt="Third slide">
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

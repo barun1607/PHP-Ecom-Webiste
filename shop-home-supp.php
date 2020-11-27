@@ -29,7 +29,7 @@
         <a href="#"><img class="card-img-top" src="'.$row['path'].'" alt=""></a>
         <div class="card-body">
           <h4 class="card-title">
-            <a href="shop-item.php">'.$row['pname'].'</a>
+            <a href="shop-item.php?pid='.$row['pid'].'">'.$row['pname'].'</a>
           </h4>
           <h5>Rs. '.$row['price'].'</h5>
           <p class="card-text">'.$row['description'].'</p>

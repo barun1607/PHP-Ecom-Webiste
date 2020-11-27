@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,7 +101,7 @@
           <img class="card-img-top" src="assets/img/grizzly.jpg" alt="">
           <div class="card-body">
             <h4 class="card-title">Kyriakos</h4>
-            <p class="card-text">These diet programs have helped me gain substantial mass for my powerlifting meets</p>
+            <p class="card-text">These diet programs have helped me gain substantial mass for my powerlifting meets.</p>
           </div>
           <div class="card-footer">
             <a href="shop-home-diet.php" class="btn btn-primary">Check out our diets</a>
