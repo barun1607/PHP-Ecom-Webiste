@@ -92,18 +92,22 @@
 
   <div class="container mt-5 mb-5  text-def">
     <div class="row">
-      <h2 class="mb-3">Your Cart</h2>
+      <div class="col-12">
+        <h2 class="mb-3">Your Cart</h2>
+      </div>      
     </div>
-    <div class="row">      
-      <?php
-        if(empty($productStore)) {
-          echo "<h4 >You haven't added any products yet</h4>";
-        } else {
-          foreach($productStore as $product) {
-            renderProducts($product);
-          } 
-        }           
-      ?>
+    <div class="row"> 
+      <div class="col-12">
+        <?php
+          if(empty($productStore)) {
+            echo "<h4 >You haven't added any products yet</h4>";
+          } else {
+            foreach($productStore as $product) {
+              renderProducts($product);
+            } 
+          }           
+        ?>
+      </div>        
     </div>
   </div>
 
