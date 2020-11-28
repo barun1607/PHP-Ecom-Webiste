@@ -67,7 +67,7 @@ a:hover {
   color: var(--nav-color-hover);
 }
 
-.modal-body, .modalheader, .modal-footer {
+.modal-body, .modal-header, .modal-footer, .modal-content {
   background-color: var(--card-color);
   border: none;
 }

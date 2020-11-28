@@ -2,20 +2,11 @@
   session_start();
 
   if(!isset($_SESSION['uid'])) {
-    header('login.php');
+    header('Location: login.php');
     die();
   }
 
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "wp_project_db";
-
-  $connection = mysqli_connect($servername, $username, $password, $dbname);
-
-  if (!$connection) {
-    die("Connection failed: " . mysqli_connect_error());
-  }
+  include('config.php');
 
   $fetchProducts = "SELECT * FROM products WHERE type='supplement'";
 
@@ -76,7 +67,7 @@
 </head>
 
 <body>
-
+  <?php include('logoutModal.php'); ?>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div class="container">
@@ -95,13 +86,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Calculators</a>
+            <a class="nav-link" href="calculator.php">Calculators</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="cart.php">Cart <i class='fas fa-shopping-cart'></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Logout <i class='fas fa-sign-out-alt'></i></a>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Logout <i class='fas fa-sign-out-alt'></i></button>
           </li>
         </ul>
       </div>
@@ -115,7 +106,7 @@
 
       <div class="col-lg-3">
 
-        <h1 class="my-4 tex">Shop</h1>
+        <h1 class="text-def my-4">Shop</h1>
         <div class="list-group">
           <a href="shop-home-workout.php" class="list-group-item">Workouts</a>
           <a href="shop-home-diet.php" class="list-group-item">Diets</a>

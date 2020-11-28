@@ -1,28 +1,19 @@
 <?php
   session_start();
-  $uid = 1;
-  $cid = 1;
 
-  $_SESSION['uid'] = $uid;
-  $_SESSION['cid'] = $cid;
+  include('config.php');
 
   if(!isset($_SESSION['uid'])) {
     header('Location: login.php');
-    die();    
+    die();
   }
 
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "wp_project_db";
-
-  $connection = mysqli_connect($servername, $username, $password, $dbname);
-
-  if (!$connection) {
-    die("Connection failed: " . mysqli_connect_error());
+  if(!isset($_SESSION['cid'])) {
+    $getCart = "SELECT * FROM cart WHERE uid=".$_SESSION['uid']."";
+    $result = $connection->query($getCart);
+    $row = $result->fetch_assoc();
+    $_SESSION['cid'] = $row['cid'];
   }
-
-
 
   $connection->close();
 ?>
@@ -49,6 +40,7 @@
 </head>
 
 <body>
+  <?php include('logoutModal.php'); ?>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div class="container">
@@ -67,13 +59,13 @@
             <span class="sr-only">(current)</span>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Calculators</a>
+            <a class="nav-link" href="calculator.php">Calculators</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="cart.php">Cart <i class='fas fa-shopping-cart'></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Logout <i class='fas fa-sign-out-alt'></i></a>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Logout <i class='fas fa-sign-out-alt'></i></button>
           </li>
         </ul>
       </div>
@@ -162,7 +154,11 @@
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+  <script>
+    function showModal() {
+      $("#myModal").modal("show");
+    }   
+  </script>
 </body>
 
 </html>

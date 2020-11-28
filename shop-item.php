@@ -2,23 +2,14 @@
   session_start();
 
   if(!isset($_SESSION['uid'])) {
-    header('login.php');
+    header('Location: login.php');
     die();
   }
 
   $pid = $_GET['pid'];
   $cid = $_SESSION['cid'];
 
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "wp_project_db";
-
-  $connection = mysqli_connect($servername, $username, $password, $dbname);
-
-  if (!$connection) {
-    die("Connection failed: " . mysqli_connect_error());
-  }
+  include('config.php');
 
   $getProduct = "SELECT * FROM products WHERE pid=$pid";
   $updateCart = "INSERT INTO cart_contents(cid, pid) values ($cid, $pid);";
@@ -33,8 +24,6 @@
     if($connection->query($updateCart) === TRUE) $message = "Item added to cart";
     unset($_POST['cartadd']);
   }
-
-
 
   $connection->close();
 ?>
@@ -61,7 +50,7 @@
 </head>
 
 <body>
-
+  <?php include('logoutModal.php'); ?>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
     <div class="container">
@@ -80,13 +69,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Calculators</a>
+            <a class="nav-link" href="calculator.php">Calculators</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Cart <i class='fas fa-shopping-cart'></i></a>
+            <a class="nav-link" href="cart.php">Cart <i class='fas fa-shopping-cart'></i></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Logout <i class='fas fa-sign-out-alt'></i></a>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">Logout <i class='fas fa-sign-out-alt'></i></button>
           </li>
         </ul>
       </div>
@@ -117,13 +106,13 @@
             Product Reviews
           </div>
           <div class="card-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+            <p>Amazing product! Would recommend to everyone!</p>
             <small class="text-muted">Posted by Anonymous on 3/1/17</small>
             <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+            <p>Value for money!</p>
             <small class="text-muted">Posted by Anonymous on 3/1/17</small>
             <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis et enim aperiam inventore, similique necessitatibus neque non! Doloribus, modi sapiente laboriosam aperiam fugiat laborum. Sequi mollitia, necessitatibus quae sint natus.</p>
+            <p>Very great product with really good customer services! </p>
             <small class="text-muted">Posted by Anonymous on 3/1/17</small>
             <hr>
             <form method="POST">
