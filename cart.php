@@ -97,17 +97,15 @@
       </div>      
     </div>
     <div class="row"> 
-      <div class="col-12">
-        <?php
-          if(empty($productStore)) {
-            echo "<h4 >You haven't added any products yet</h4>";
-          } else {
-            foreach($productStore as $product) {
-              renderProducts($product);
-            } 
-          }           
-        ?>
-      </div>        
+      <?php
+        if(empty($productStore)) {
+          echo "<h4 >You haven't added any products yet</h4>";
+        } else {
+          foreach($productStore as $product) {
+            renderProducts($product);
+          } 
+        }           
+      ?>      
     </div>
   </div>
 
